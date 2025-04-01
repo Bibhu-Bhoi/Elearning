@@ -1,13 +1,13 @@
 const TryCatch = (handler) => {
-    return async (req, res, next) => {
+  return async (req, res, next) => {
       try {
-        await handler(req, res, next);
+          await handler(req, res, next);
       } catch (error) {
-        res.status(500).json({
-          message: error.message,
-        });
+          res.status(500).json({
+              message: error.message,
+          });
       }
-    };
   };
-  
-  export default TryCatch; // Add this line for default export
+};
+
+export default TryCatch;
